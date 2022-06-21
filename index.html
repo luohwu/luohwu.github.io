@@ -74,29 +74,72 @@
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-
-        <!--First project!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-        <!--First project!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-        <!--First project!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-
-          <tr onmouseout="mip360_stop()" onmouseover="mip360_start()"  bgcolor="#ffffd0">
+        <!--Faster SURF project!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+        <!--Faster SURF project!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+        <!--Faster SURF project!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+          <tr onmouseout="SURF_stop()" onmouseover="SURF_start()"  >
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='mip360_image'><video  width=100% height=100% muted autoplay loop>
+<!--                <div class="two" id='SURF_image'><video  width=100% height=100% muted autoplay loop>-->
+<!--                <source src="images/MPC.mp4" type="video/mp4">-->
+<!--                Your browser does not support the video tag.-->
+<!--                </video></div>-->
+                <img src='images/faster SURF.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function SURF_start() {
+                  document.getElementById('SURF_image').style.opacity = "1";
+                }
+
+                function SURF_stop() {
+                  document.getElementById('SURF_image').style.opacity = "0";
+                }
+                SURF_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="http://luohwu.github.io/Faster SURF">
+                <papertitle>Making Speeded Up Robust Features (SURF) Faster</papertitle>
+              </a>
+              <br>
+              Adrian Hoffmann,
+              <strong>Luohong Wu</strong>,
+              Marc Styger,
+              Max Eichenberger
+              <p></p>
+              <br>
+							<b>Keywords:</b> Robust Image Feature, Performance Optimization, Code Optimization
+              <br>
+              <p><br></p>
+              <p><br></p>
+              <p><br></p>
+
+
+            </td>
+          </tr>
+
+        <!--First project!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+        <!--First project!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+        <!--First project!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+          <tr onmouseout="MPC_stop()" onmouseover="MPC_start()"  bgcolor="#ffffd0">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='MPC_image'><video  width=100% height=100% muted autoplay loop>
                 <source src="images/MPC.mp4" type="video/mp4">
                 Your browser does not support the video tag.
                 </video></div>
                 <img src='images/MPC.jpg' width="160">
               </div>
               <script type="text/javascript">
-                function mip360_start() {
-                  document.getElementById('mip360_image').style.opacity = "1";
+                function MPC_start() {
+                  document.getElementById('MPC_image').style.opacity = "1";
                 }
 
-                function mip360_stop() {
-                  document.getElementById('mip360_image').style.opacity = "0";
+                function MPC_stop() {
+                  document.getElementById('MPC_image').style.opacity = "0";
                 }
-                mip360_stop()
+                MPC_stop()
               </script>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
@@ -109,8 +152,11 @@
               <a href="http://crl.ethz.ch/people/coros/index.html">Stelian Coros</a>
               <p></p>
               <br>
-							<b>Keywords:</b> MPC, simulation, performance optimization
+							<b>Keywords:</b> MPC, Simulation, Quadratic Programming, Performance Optimization
               <br>
+              <p><br></p>
+              <p><br></p>
+              <p><br></p>
             </td>
           </tr>
 
