@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>IBM Call for Code Challenge</title>
+    <title>HoloRegi</title>
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,7 +47,7 @@
     <div class="container" id="main">
         <div class="row">
             <h2 class="col-md-12 text-center">
-                <b>Climate change and Infectious Disease</b>
+                <b>HoloRegi: Patient Registration with HoloLens</b>
 <!--                <b>Mip-NeRF 360</b>: Unbounded <br> Anti-Aliased Neural Radiance Fields</br> -->
 <!--                <small>-->
 <!--								CVPR 2022 (Oral Presentation)-->
@@ -58,21 +58,23 @@
             <div class="col-md-12 text-center">
                 <ul class="list-inline">
                     <li>
+                        Juyi Zhang <sup>*</sup>
+                        </br>ETHZ
+                    </li>
+                    <li>
+                        Junhao Zhang <sup>*</sup>
+                        </br>ETHZ
+                    </li>
+                    <li>
                         <a href="https://luohwu.github.io">
-                          Luohong Wu
+                          Luohong Wu <sup>*</sup>
                         </a>
                         </br>ETHZ
                     </li>
-                    <li>
-                          Chenyu Shen
-                        </br>ETHZ
-                    </li>
-                    <li>
-                          Wynne Katherine
-                        </br>University of Tokyo
-                    </li>
-
                 </ul>
+                <br>
+                <sup>*</sup> equal contribution
+
             </div>
         </div>
 
@@ -127,26 +129,44 @@
                 <h3>
                     Background
                 </h3>
-                This is a team project in the 2-weeks <a href="https://ethz.ch/students/en/news/student-news/2021/07/ibm-call-for-code-research-challenge.html">
-                2021 IBM Call for Code Research Challenge for Climate Change</a>. Provided the powerful platforms and rich datasets from IBM, we attack the challenge theme: Climate Change.
+                This was initially a team project of the course '3D Vision' at ETHZ, proposed by <a href="https://www.augmedit.com/">AugmedIT</a>.
+                We were supervised by Jonas Hein (PhD student at ETHZ), Jene Meulstee (product developer of AugmedIT), and Tristan van Doormaal (one of founders of AugmedIT).
+                After the course was finished, <a href="https://www.augmedit.com/">AugmedIT</a> extends this project into an internship (ongoing at this moment).
                 <br>
-                <br>
-                <div class="text-center">
-                    <image src="img/certificate.jpeg" width="600"></image>
-                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Video
+                    Introduction
                 </h3>
-                If your browser doesn't support this embedded video, please check <a href="https://video.ibm.com/recorded/130982861"> here</a> The introduction
-                of our project starts at around 33:57.
+                With augmented reality (AR), virtual 3D models can be superimposed into the real world of the user’s view.
+                <a href="https://www.augmedit.com/">AugmedIT</a> has created a workflow that can automatically transform MRI scans of patients with brain tumours <a href="https://pubmed.ncbi.nlm.nih.gov/33515122/">[1]</a>, into
+                3D holograms for the HoloLens2. These holograms can be used by doctors to prepare or plan their surgical procedure.
+                However, it remains challenging how these 3D holograms can be fused with the real
+                patients. In the existing method, a pointer is used to indicate manually 5 points on both hologram and
+                patient to register the hologram.
+
+                <br><br>
+                In this project, an automatic process is proposed to register existing medical 3D holograms to patients. We first utilize the
+                research mode of Hololens2 to obtain RGB-Depth data of a human head. The data is then transferred to a remote server via
+                a TCP connection for processing. Next, we utilize a multiway-registration-based method to align the existing patient data,
+                such as MRI data, with the processed point cloud. Visualizations and experiments demonstrate the success of our registration
+                method. Our method outperforms the previous method by reducing the Fiducial Registration Error from 8.5 mm to 1.51 mm.
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Overview of our registration pipeline.
+                </h3>
+
                 <div class="text-center">
                     <div style="position:relative;padding-top:56.25%;">
-                        <iframe src="https://video.ibm.com/embed/recorded/130982861" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        <iframe src="https://youtube.com/embed/D5AF6lFXCTs" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
                     </div>
                 </div>
             </div>
@@ -155,68 +175,15 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Description
+                    Details
                 </h3>
-                <p class="text-justify">
-                    Thanks to the improvement of sanitary and hygiene, the worldwide burden of infectious disease has fallen over the past few decades. However, the covid-19 pandemic just shows us how great the threat to global health remains – especially as the climate crisis continues to affect the transmission of disease in a variety of ways. At the moment, changing environment is demolishing our planet’s defence system people used to rely on. One way in which climate change will affect the risk of diseases spreading is by making new areas into suitable homes for disease-carrying species. For example, rising temperatures and precipitation are making temperate, mountainous countries more susceptible to outbreaks of "tropical" or “low land” diseases like malaria. The arrival and rapid spread of the mosquito-borne viral disease across the world is one of the most significant challenge for public health developments of recent years. In order to prepare for future outbreaks, it is necessary to anticipate global regions that could become suitable for disease transmission.
-                </p>
-
-                <p class="text-justify">
-                    In our project, by using the climate data from IBM PAIRS and The Weather Company, and surveillance of Anophelines’ occurrence from Malarial Mosquito Database , we aim to study the relationship between climate condition and survivability of disease vectors like Anophelines. More specifically, given a location’s climate conditions like temperature and precipitation, we trained a neural network (Fig 1.) to predict how possible Anophelines can survive in terms of climate condition. Due to time constraint, we trained our network using only data of Anopheline Funestus in the Sub-Saharan Africa, and the input features are monthly minimum temperatures and monthly maximum temperatures. And we applied our model to climate forecast during 2021-2040, the result is depicted by Fig 2. According to the result, due to effect of climate change, the climate condition of Portugal and Spain in the coming future is suitable for Anopheline to spread. And since there are travel between Sub-Saharan Africa and Portugal and Spain, the two countries will be in the risk of disease transmission.
-                </p>
-
+                <strong>Unfortunately, we can not release our documentations and code.</strong> If you are interested, please refer to:
+                <br>
+                <br>
+                [1] T. Fick, J. van Doormaal, E. Hoving, L. Regli, T van Doormaal - Holographic patient tracking after bed movement for augmented reality neuronavigation using a head-mounted display. Acta Neurochir (Wien). 2021 Jan 29. doi: 10.1007/s00701-021-04707-4.
             </div>
         </div>
 
-
-
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                    Figure 1. Our simple model
-                <div>
-                    <image src="img/figure 1.png" width="800"></image>
-                </div>
-<!--                <div class="text-center">-->
-
-<!--                    <div style="position:relative;padding-top:66.25%;" >-->
-
-<!--                        <image src="img/figure 1.png" style="position:absolute;top:0;left:0;width:100%;height:70%;"></image>-->
-<!--                    </div>-->
-<!--                </div>-->
-            </div>
-            <div class="col-md-8 col-md-offset-2">
-            <p><br></p>
-            </div>
-            <div class="col-md-8 col-md-offset-2">
-                    Figure 2. Prediction result using data of 2022~2040
-                <div>
-                    <image src="img/figure 2.png" width="800"></image>
-                </div>
-<!--                <div class="text-center">-->
-
-<!--                    <div style="position:relative;padding-top:66.25%;">-->
-<!--                        <image src="img/figure 2.png" style="position:absolute;top:0;left:0;width:100%;height:110%;"></image>-->
-<!--                    </div>-->
-<!--                </div>-->
-            </div>
-
-        </div>
-
-
-
-<!--        <div class="row">-->
-<!--            <div class="col-md-8 col-md-offset-2">-->
-<!--                <h3>-->
-<!--                    Simulation of the old slow Model Predictive Controller-->
-<!--                </h3>-->
-<!--                <div class="text-center">-->
-<!--                    <div style="position:relative;padding-top:56.25%;">-->
-<!--                        <iframe src="https://youtube.com/embed/P4xwSANzpwk" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
 
             
 
