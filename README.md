@@ -1,1 +1,19 @@
-This is the source code to Jon Barron's public academic website: https://jonbarron.info/. You are welcome to clone this code for your own personal use, just please attribute the source to the original website or to this repo. If you do clone this website, feel free to add an attribution link to your own downstream website in index.html if you want.
+# Luohong Wu — Personal Website
+
+Academic homepage built with the [Minimal Light](https://github.com/yaoyao-liu/minimal-light) stylesheet and custom static HTML.
+
+## Edit
+
+- `index.html`: profile, research, datasets, and academic service.
+- `assets/css/custom.css`: layout, responsive styles, and navigation.
+- `assets/css/minimal-light.css`: upstream theme styles; see `LICENSE-Minimal-Light`.
+
+## Preview
+
+Open `index.html` directly, or run `python -m http.server 8765 --bind 127.0.0.1` from this directory and visit `http://127.0.0.1:8765/`.
+
+## Hosting
+
+The site is prepared for GitHub Pages using the `main` branch and repository root. `.nojekyll` enables static-file publishing.
+
+Website: https://luohwu.github.io/
