@@ -2,9 +2,8 @@
   const videos = document.querySelectorAll('.research-media video');
   if (!videos.length) return;
 
-  // Auto-playing motion is opt-out for people who ask for reduced motion.
-  if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
-
+  // No prefers-reduced-motion opt-out: the clips are muted and keep their
+  // controls, which is the pause mechanism WCAG 2.2.2 asks for.
   const play = video => {
     if (video.preload === 'none') video.preload = 'auto';
     // Rejects when the browser still wants a gesture; controls remain as the fallback.
