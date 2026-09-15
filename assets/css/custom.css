@@ -25,3 +25,32 @@ html{scroll-behavior:smooth;scroll-padding-top:30px}body{color:var(--ink);font-f
 .section-links{display:grid;grid-template-columns:minmax(0,1fr);gap:4px}
 .section-links>.navigation-label,.section-links>a{grid-column:1;width:100%}
 .section-links a{text-align:center}
+
+/* Research media: original project footage and paper figures. */
+.wrapper{width:min(1160px,100%);gap:56px}
+.publication.with-media{grid-template-columns:240px minmax(0,1fr);gap:25px;align-items:start;padding:28px 0}
+.research-media{margin:0;min-width:0;padding-top:3px}
+.research-media video,.research-media img{display:block;width:100%;height:172px;object-fit:contain;background:#f5f7f9;border-radius:7px;border:1px solid var(--line)}
+.media-image{display:block}.media-image:hover img{border-color:var(--accent)}
+.research-media figcaption{font:12px/1.5 Arial,sans-serif;color:var(--muted);padding:8px 0 0}
+.research-media figcaption a{white-space:nowrap}
+.publication-copy{min-width:0}.publication-copy .venue-label{display:flex;gap:9px;align-items:center;text-align:left;padding:0;margin:0 0 10px}
+.publication-copy .venue-label span{display:inline-block;padding:2px 7px;font-size:11px}.publication-copy .venue-label small{padding:0;font-size:13px}
+@media(max-width:1100px) and (min-width:701px){.publication.with-media{grid-template-columns:190px minmax(0,1fr);gap:20px}.research-media video,.research-media img{height:150px}}
+@media(max-width:850px) and (min-width:701px){.publication.with-media{grid-template-columns:1fr}.research-media{max-width:360px}.research-media video,.research-media img{height:210px}}
+@media(max-width:700px){.publication.with-media{grid-template-columns:1fr;gap:15px}.research-media video,.research-media img{height:auto;aspect-ratio:16/10;max-height:280px}.publication-copy .venue-label{margin-bottom:9px}}
+@media print{.publication.with-media{grid-template-columns:150px 1fr}.research-media video,.research-media img{height:100px}}
+
+.research-media iframe{display:block;width:100%;height:190px;border:1px solid var(--line);border-radius:7px;background:#f3f6fa}
+@media(max-width:700px){.research-media iframe{height:240px}}
+
+/* Modal image viewer; native dialog supplies Escape and focus containment. */
+.media-image{cursor:zoom-in}
+html.lightbox-open{overflow:hidden}
+.image-lightbox{position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:56px 28px 28px;border:0;background:transparent;overflow:hidden}
+.image-lightbox[open]{display:flex;align-items:center;justify-content:center}
+.image-lightbox::backdrop{background:rgba(10,17,25,.86)}
+.lightbox-image{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;background:white;border-radius:5px;box-shadow:0 12px 60px rgba(0,0,0,.3)}
+.lightbox-close{position:absolute;right:16px;top:12px;width:38px;height:38px;border:1px solid #8793a0;border-radius:50%;background:#17212b;color:white;font:28px/1 Arial,sans-serif;cursor:pointer}
+.lightbox-close:hover{background:#344758}.lightbox-close:focus-visible{outline:3px solid white;outline-offset:3px}
+@media(max-width:700px){.image-lightbox{padding:58px 12px 22px}}

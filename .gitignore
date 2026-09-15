@@ -1,3 +1,4 @@
 .idea
-draw.pptx# Local CV copy is intentionally excluded from the website repository.
-/assets/files/Luohong_Wu_CV.pdf
+draw.pptx
+# Local CV files are excluded from the public website repository.
+/assets/files/
